@@ -3,5 +3,6 @@
 .foreach /s (exc "epr sbo sov gp ii av") {sxe ${exc}}
 sxe -c ".logclose" -h epr
 bu jscript9!Js::ScriptContext::IsInEvalMap ".echo EVAL(dyn)-----;.printf \"%mu\", poi(esp+0x18);.echo;g"
+bu MSHTML!CHTMLoad::Write ".echo DOCUMENT.WRITE-----;.printf \"%mu\",poi(esp+0x4);.echo;g"
 g
 
